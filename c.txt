@@ -1,0 +1,177 @@
+/*#include <stdio.h>
+
+// Function Declaration
+void getNumber();
+
+int main() {
+    int num;
+
+    // Function Call
+    num = getNumber();
+
+    printf("The number returned is: %d\n", num);
+    return 0;
+}
+
+// Function Definition
+void getNumber() {
+    return 100;  // returns an integer value
+}*/
+
+// 1 given a 2d array  int matt[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; write a program to print sum of 2nd raw
+
+
+/*
+#include <stdio.h>
+
+int main()
+{
+
+    int mat[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
+    int sum = 0;
+    for (int *p = mat[1]; p < mat[1] + 3; p++) {
+        sum += *p;
+    }
+    printf("%d\n", sum);
+}
+*/
+
+// 2. uses switch statement to write simple cal , int a , int a and operater char is  *,+,-,/ ,
+
+/*
+#include <stdio.h>
+
+int main()
+{
+    int a;
+    int b;
+    char c;
+    int sum;
+
+    printf("Enter first integer a : ");
+    scanf("%d", &a);
+
+    printf("Enter operator +, -, *, : ");
+    scanf(" %c", &c);
+
+    printf("Enter second integer b: ");
+    scanf("%d", &b);
+
+    switch (c)
+    {
+    case '+':
+        sum = a + b;
+        printf("Result = %d\n", sum);
+        break;
+
+    case '-':
+        sum = a - b;
+        printf("Result = %d\n", sum);
+        break;
+
+    case '*':
+        sum = a * b;
+        printf("Result = %d\n", sum);
+        break;
+
+    case '/':
+        if (b != 0)
+        {
+            sum = a / b;
+            printf("sum= %d\n", sum);
+        }
+        else
+        {
+            printf("invalid \n");
+        }
+        break;
+
+    default:
+        printf("Invalid\n");
+    }
+
+    return 0;
+}
+*/
+
+
+// 3 print fibbonaci sequence upto n terms
+
+/*
+#include <stdio.h>
+
+int fib(int n) {
+    if (n < 0) { return -1;}  // invalid
+    if (n == 0) { return 0; }  // base
+    if (n == 1) { return 1; }
+
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    int n;
+
+    printf("Enter number of terms  n : ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    if (n<0) { printf("invalid"); }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", fib(i));
+    }
+
+    return 0;
+}
+*/
+
+//4
+/*
+#include <stdio.h>
+
+int main()
+{
+    char a;
+    printf("Enter a character: ");
+    scanf("%c", &a);
+
+    if (a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u')
+    {
+        printf("You entered an vowel.\n");
+    }
+    else
+    {
+        printf("You entered a vowel.\n");
+    }
+}
+
+
+*/
+
+// 5 create struct with fields id  nsame j marks[1];
+
+
+#include <stdio.h>
+
+struct qu {
+    int id= 12345;
+    char *name= jhon;
+    int marks[1] ={50};
+};
+
+int main() {
+    struct qu obj1;
+
+   int  id= obj1.id;
+  char   *name= obj1.name;
+    char marks =obj1.marks;
+    printf("ID: %d\n", obj1.id);
+    printf("Name: %s\n", obj1.name);
+    printf("Marks[0]: %d\n", obj1.marks[0]);
+
+    return 0;
+}
+
+
+
