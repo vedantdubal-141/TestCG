@@ -1,0 +1,145 @@
+<!--Q1 Create html table showning  3 student name , age, city -->
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th><span>Name</span></th>
+        <th><span>City</span></th>
+        <th><span>Age</span></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span>John Kira</span></td>
+        <td><span>Columbia</span></td>
+        <td><span>23</span></td>
+    </tr>
+    <tr>
+        <td><span>Reikik</span></td>
+        <td><span>New Jersey</span></td>
+        <td><span>25</span></td>
+    </tr>
+    <tr>
+        <td><span>Jane Doe</span></td>
+        <td><span>California</span></td>
+        <td><span>27</span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
+
+-->
+
+<!-- Q2 2 box with flexbox and properties, -->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main-div{
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .box{
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            align-items: center;
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+<div class="main-div" id="main-div">
+    <div class="box" id="box">1</div>
+    <div class="box" >2</div>
+</div>
+
+</body>
+</html>
+-->
+
+<!-- Q3 media quary -->
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Title</title>
+    <style>
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+        @media screen and (min-width: 600px) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+        @media screen and (min-width: 900px) {
+            body {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+<p> media</p>
+</body>
+</html>
+-->
+
+<!--Q4 Local STorage-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save to Local Storage</title>
+</head>
+<body>
+<input type="text" id="inputText" class="text" placeholder="Enter text here">
+<button id="submitBtn" class="submit">Submit</button>
+<p id="displayText" class="p"></p>
+
+<script>
+    const inputText = document.getElementById('inputText');
+    const button = document.getElementById('submitBtn');
+    const paragraph = document.getElementById('displayText');
+    button.addEventListener('click', function() {
+        const text = inputText.value; //
+        localStorage.setItem('userText', text);
+        paragraph.textContent = localStorage.getItem('userText');
+    });
+    paragraph.textContent = localStorage.getItem('userText');
+</script>
+
+</body>
+</html>
+
+
