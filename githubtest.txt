@@ -1,0 +1,253 @@
+Q 1----------------------------------------
+
+
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ mkdir -p temp1
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ cd temp1/
+
+ ╭─arch@arch in ~/1GIT/temp1
+ ╰─λ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /home/arch/1GIT/temp1/.git/
+
+ ╭─arch@arch in repo: temp1 on  master took 0s
+ ╰─λ touch file1.txt file2.txt
+
+ ╭─arch@arch in repo: temp1 on  master [?] took 0s
+ ╰─λ git add file2.txt  file1.txt
+
+ ╭─arch@arch in repo: temp1 on  master [+] took 0s
+ ╰─λ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+
+
+ ╭─arch@arch in repo: temp1 on  master [+] took 0s
+ ╰─λ git commit -m "add 2 files"
+[master (root-commit) 3155546] add 2 files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+ ╭─arch@arch in repo: temp1 on  master took 0s
+ ╰─λ
+
+
+
+
+ Q2----------------------
+
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ mkdir -p temp2
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ cd temp2/
+
+ ╭─arch@arch in ~/1GIT/temp2
+ ╰─λ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /home/arch/1GIT/temp2/.git/
+
+ ╭─arch@arch in repo: temp2 on  master took 0s
+ ╰─λ git switch -c update-readme
+Switched to a new branch 'update-readme'
+
+ ╭─arch@arch in repo: temp2 on  update-readme took 0s
+ ╰─λ echo " line 1
+             line 2 " >> file1.txt
+
+ ╭─arch@arch in repo: temp2 on  update-readme [?]
+ ╰─λ ls
+drwxr-xr-x  - arch  4 12月 16:24  .git
+.rw-r--r-- 24 arch  4 12月 16:25  file1.txt
+
+ ╭─arch@arch in repo: temp2 on  update-readme [?] took 0s
+ ╰─λ git switch -c master
+Switched to a new branch 'master'
+
+
+─arch@arch in repo: temp2 on  update-readme [?] took 0s
+ ╰─λ  git merge update-readme
+Updating a1b2c3d..e4f5g6h
+Fast-forward
+ file1.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+ Q-3--------------------------
+$ echo "new content" > file2.txt
+
+$ git stash push -m "Uncommitted changes in file2.txt"
+Saved working directory and index state On main: Uncommitted changes in file2.txt
+
+$ git stash list
+stash@{0}: On main: Uncommitted changes in file2.txt
+
+$ git stash apply stash@{0}
+On branch main
+Untracked files:
+  file2.txt
+nothing added to commit but untracked files present
+
+$ git checkout main
+Already on 'main'
+
+$ git checkout feature-branch
+$ git rebase main
+Successfully rebased and updated refs/heads/feature-branch.
+
+$ git tag v1.1
+
+. bash
+ bash
+
+ ╭─arch@arch in ~/1GIT took 85s
+ ╰─λ
+
+ Q5------------------------------
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ mkdir -p temp-3
+
+ ╭─arch@arch in ~/1GIT took 0s
+ ╰─λ cd temp-3
+
+ ╭─arch@arch in ~/1GIT/temp-3 took 0s
+ ╰─λ echo "# palcollab" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/vedantdubal-141/palcollab.git
+git push -u origin main
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /home/arch/1GIT/temp-3/.git/
+[master (root-commit) 3323329] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 226 bytes | 226.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vedantdubal-141/palcollab.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+ ╭─arch@arch in repo: temp-3 on  main took 1s
+ ╰─λ ls
+drwxr-xr-x  - arch  4 12月 16:41  .git
+.rw-r--r-- 12 arch  4 12月 16:40 󰂺 README.md
+
+
+Q-4
+
+
+
+ pwd
+/home/arch/1GIT/temp-3
+
+ ╭─arch@arch in ~/1GIT/temp-3 took 0s
+ ╰─λ git clone https://github.com/vedantdubal-141/TestCG.git
+Cloning into 'TestCG'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (9/9), 4.46 KiB | 4.46 MiB/s, done.
+Resolving deltas: 100% (1/1), done.
+
+ ╭─arch@arch in ~/1GIT/temp-3 took 1s
+ ╰─λ git pull
+fatal: not a git repository (or any of the parent directories): .git
+
+ ╭─arch@arch in ~/1GIT/temp-3 took 0s
+[🔴] × cd TestCG
+
+ ╭─arch@arch in repo: TestCG on  main took 0s
+ ╰─λ git pull
+Already up to date.
+
+ ╭─arch@arch in repo: TestCG on  main took 0s
+ ╰─λ git switch-c git-test
+git: 'switch-c' is not a git command. See 'git --help'.
+
+ ╭─arch@arch in repo: TestCG on  main took 0s
+[🔴] × git switch -c git-test
+Switched to a new branch 'git-test'
+
+ ╭─arch@arch in repo: TestCG on  git-test took 0s
+ ╰─λ echo " changes" >> README.md
+
+ ╭─arch@arch in repo: TestCG on  git-test [!] took 0s
+ ╰─λ git add .
+
+ ╭─arch@arch in repo: TestCG on  git-test [+] took 0s
+ ╰─λ git commit -m "git test"
+[git-test efa0e28] git test
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ ╭─arch@arch in repo: TestCG on  git-test took 0s
+ ╰─λ git push origin git-test
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 28 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'git-test' on GitHub by visiting:
+remote:      https://github.com/vedantdubal-141/TestCG/pull/new/git-test
+remote:
+To https://github.com/vedantdubal-141/TestCG.git
+ * [new branch]      git-test -> git-test
+
+ ╭─arch@arch in repo: TestCG on  git-test took 1s
+ ╰─λ
+
+
+
